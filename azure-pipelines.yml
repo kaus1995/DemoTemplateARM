@@ -1,0 +1,21 @@
+trigger:
+- master
+
+pool:
+ vmImage: 'ubuntu-latest'
+
+steps:
+ - 
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Free Trial(e9926545-2efb-4941-8934-7eb8d65487b2)'
+    subscriptionId: 'e9926545-2efb-4941-8934-7eb8d65487b2'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Demo'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://raw.githubusercontent.com/kaus1995/DemoTemplateARM/master/template.json'
+    csmParametersFile: 'https://raw.githubusercontent.com/kaus1995/DemoTemplateARM/master/parameters.json'
+    deploymentMode: 'Incremental'
+    deploymentName: 'PipelineDemo'
