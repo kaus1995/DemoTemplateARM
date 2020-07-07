@@ -1,0 +1,71 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westindia"
+        },
+        "networkInterfaceName": {
+            "value": "myvm2861"
+        },
+        "networkSecurityGroupName": {
+            "value": "myvm2-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "mysubn1"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/e6fc9fb1-9c70-4dc4-b757-fc91154592a1/resourceGroups/myrg1/providers/Microsoft.Network/virtualNetworks/myVN1"
+        },
+        "publicIpAddressName": {
+            "value": "myvm2-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "myvm2"
+        },
+        "virtualMachineRG": {
+            "value": "myrg1"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "adharap"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "myrg1diag273"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/e6fc9fb1-9c70-4dc4-b757-fc91154592a1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/myrg1diag273"
+        }
+    }
+}
