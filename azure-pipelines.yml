@@ -1,5 +1,4 @@
-trigger:
-- master
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
